@@ -12,18 +12,20 @@ This script first runs ``checkupdates`` and ``pacman -Qm | aur vercmp`` in paral
 ![Screenshot without count](/res/screenshot-without-count.png?raw=true "Screenshot without count")
 
 ### How to install
-Clone the repository, cd into it, run makepkg
+Clone the repository, cd into it, install aurutils if necessary, run makepkg
 
 ```
 git clone https://github.com/SakuSnack/checkupdates-with-aur
 cd checkupdates-with-aur
+yay -S --needed --asdeps aurutils
 makepkg -si
 ```
 The script will then be installed as ``/usr/bin/checkupdates-with-aur`` and be usable from any shell.
 
-Alternatively, you can also use the script without installing it (however, the packages ``pacman-contrib`` and ``aurutils`` are required:
+Alternatively, you can also use the script without installing it:
 ```
-sudo pacman -S --needed pacman-contrib aurutils
+sudo pacman -S --needed pacman-contrib
+yay -S --needed aurutils
 ./checkupdates-with-aur.sh
 ```
 
